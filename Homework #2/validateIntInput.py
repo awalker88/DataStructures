@@ -1,5 +1,6 @@
 """
     File:  validateIntInput.py
+    Author: Dr. Mark Fienup
     Description:  Simple program to demonstrate try-except to validate
     an integer input from the user.   
 """
