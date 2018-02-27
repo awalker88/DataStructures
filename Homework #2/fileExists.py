@@ -1,5 +1,6 @@
 """
     File:  fileExists.py
+    Author: Dr. Mark Fienup
     Description:  Simple program to demonstrate the os.path module function
     "exists" which checks to see if the file name exists.
 """
