@@ -1,5 +1,6 @@
 """
     File:  readTextFileByWords.py
+    Author: Dr. Mark Fienup
     Description:  Simple program to demonstrate how to:
     * read a text file a line at a time
     * split each line by white-space (space, tab) into a list of words
