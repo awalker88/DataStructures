@@ -1,4 +1,4 @@
-# DataStructures
+# data-structures
 Code created for my Data Structures Class
 
 My name is Andrew Walker and I am a Economics Major and Computer Science Minor at the University of Northern Iowa.
