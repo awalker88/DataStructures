@@ -1,5 +1,6 @@
 """
     File:  validateStringInput.py
+    Author: Dr. Mark Fienup
     Description:  Simple program to demonstrate how to validate
     user-input string is one of a set of strings.   
 """
