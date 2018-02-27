@@ -1,0 +1,9 @@
+     Student Information Report     
+
+
+Name            Student #      GPA
+------------------------------------
+Mark             123456        4.00
+Bob              234567        2.59
+Sally            345678        3.98
+Virginia         456789        3.66
