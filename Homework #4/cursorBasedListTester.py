@@ -40,14 +40,15 @@ def testList():
         print("A - Insert Line After Current Line")
         print("B - Insert Line Before Current Line")
         print("C - getCurrent")
-        print("E - isEmpty")
         print("F - View First Line")
         print("L - View Last Line")
         print("N - View Next Line")
         print("P - View Previous Line")
         print("R - Remove Current Line")
         print("U - Replace the Current Line With a New One")
+        print("S - Save the Current List back to the Text File")
         print("X - Save the Current Line and Exit")
+
         response = input("Menu Choice? ").upper()
         if response == 'A':
             # insert a new line after the current one and make it the current line
