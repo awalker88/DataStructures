@@ -8,6 +8,7 @@ from os.path import exists
 
 from cursor_based_list import CursorBasedList
 
+#test
 
 def fileLoader(filename):
     while filename[:-4] != '.txt':
