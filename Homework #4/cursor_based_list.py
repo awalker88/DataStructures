@@ -40,7 +40,6 @@ class CursorBasedList(object):
             raise AttributeError("Empty list has no first item.")
         self._current = self._header.getNext()
 
-        
     def last(self):
         """Moves the cursor to the last item
         if there is one.
@@ -48,7 +47,6 @@ class CursorBasedList(object):
         if self.isEmpty():
             raise AttributeError("Empty list has no last item.")
         self._current = self._trailer.getPrevious()
-
 
     def next(self):
         """Precondition: hasNext returns True.
@@ -157,11 +155,11 @@ class CursorBasedList(object):
 
     def __str__(self):
         """Includes items from first through last."""
-        resultString = "(head)"
+        resultString = "(head)\n"
         current = self._header.getNext()
         while current.getNext() is not None:
             resultString += " " + str(current.getData())
             current = current.getNext()
-        resultString = resultString + " (tail)"
+        resultString = resultString + "(tail)"
         return resultString
 
