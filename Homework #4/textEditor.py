@@ -4,7 +4,8 @@ Author: Andrew Walker
 Date: 3/3/2018
 Description:
 """
-from os.path import exists
+from os.path import exists, dirname, getsize
+from os.stat import
 
 from cursor_based_list import CursorBasedList
 
@@ -26,13 +27,16 @@ def fileLoader(filename):
 
     if exists(filename):
         toOpenFile = open(filename, 'r')
+        print(getsize(toOpenFile))
         newCBL._current = newCBL._header # sets the header to current so we can insertAfter
         for line in toOpenFile:
             newCBL.insertAfter(str(line))
         return newCBL # new linked list object filled with .txt file
     else:
-        toOpenFile = open(filename, 'r')
+        open(filename, 'w')
         firstEntry = input("Initialize your new text file with a first entry (can be changed later): ")
+        firstEntry.rstrip("\n") # ensures there's no new line so we can safely add one
+        firstEntry += "\n"
         newCBL._current = newCBL._header
         newCBL.insertAfter(firstEntry)
     return newCBL  # new empty linked list object
@@ -102,5 +106,5 @@ def testList():
 
 # testList()
 
-testCBL = fileLoader("sampleText.txt")
+testCBL = fileLoader("sampleText2.txt")
 print(testCBL)
