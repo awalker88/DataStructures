@@ -5,7 +5,7 @@ Date: 3/3/2018
 Description:
 """
 from os.path import exists, dirname, getsize
-from os.stat import
+# from os.stat import
 
 from cursor_based_list import CursorBasedList
 
