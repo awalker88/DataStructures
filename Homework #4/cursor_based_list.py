@@ -133,6 +133,7 @@ class CursorBasedList(object):
                 tempNext.setPrevious(tempPrevious)
                 tempPrevious.setNext(tempNext)
                 self._current = self._current.getNext()
+            self._size -= 1
 
 
     def replace(self, newItemValue):
