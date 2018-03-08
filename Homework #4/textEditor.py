@@ -10,7 +10,7 @@ from time import sleep
 from cursor_based_list import CursorBasedList
 
 def main():
-    filename = "sampleText.txt" # TODO: add input("Please enter a .txt filename")
+    filename = input("Please enter a .txt filename: ")
     loadedCBL = fileLoader(filename)
     menuOptions(loadedCBL, filename)
 
@@ -35,22 +35,21 @@ def fileLoader(filename):
                 newCBL.insertAfter(str(line))
         return newCBL # new linked list object filled with .txt file's lines
     else:
-        toOpenFile = open(filename, 'w')
         newCBL = initialize(newCBL)
-        toOpenFile.write(newCBL)
+        save(newCBL, filename)
     return newCBL  # new empty linked list object
 
 def initialize(emptyCBL):
-    """ Takes in an empty cursor_based_list and initializes it with a user entry"""
+    """ Takes in an empty cursor_based_list and initializes it with a user entry """
     firstEntry = input("Initialize your new text file with a first entry (can be changed later): ")
     firstEntry = firstEntry.rstrip("\n")  # ensures there's no newline so we can safely add one
     firstEntry += "\n"
-    emptyCBL._current = emptyCBL._header # sets the header to current so we can insertAfter
+    emptyCBL._current = emptyCBL._header # sets the header to current since current is initially 'none'
     emptyCBL.insertAfter(firstEntry)
     return emptyCBL
 
 def save(CBL, filename):
-    """TODO write description"""
+    """ Saves the contents of our cursor based list back to the opened file """
     fileToWrite = open(filename, 'w')
     current = CBL._header.getNext()
     while current.getNext() is not None:
@@ -58,32 +57,36 @@ def save(CBL, filename):
         current = current.getNext()
 
 def findWord(CBL, word):
-    """ TODO write description """
+    """ Given a word, this searches through the file and returns the number of times and the line(s) the word appears on """
     myCBL = CBL
     linesWithWord = [] # list containing the lines the word occurs on
     linesWithWordNumber = [] # list containing the line number the word occurs on
+    numFound = 0
 
     current = myCBL._header.getNext()
     lineNum = 1
     while current.getNext() is not None:
-        lineStr = str(current.getData())
-        lineLst = lineStr.split()
-        # todo write this so it only adds to linesWithWord if the line contains the word
-        newLineLst = [x if x != word else ("[" + word + "]") for x in lineLst]
-        newLineStr = ' '.join(newLineLst)
-        linesWithWord.append(newLineStr)
-        linesWithWordNumber.append(lineNum)
+        lineLst = (str(current.getData())).split() # contains a list of all the words in a line
+
+        if word in lineLst:
+            newLineLst = [x if x != word else ("[" + word + "]") for x in lineLst] # adds brackets around the word we're looking for
+            newLineStr = ' '.join(newLineLst)
+            linesWithWord.append(newLineStr)
+            linesWithWordNumber.append(lineNum)
+            numFound += 1
         lineNum += 1
         current = current.getNext()
     if len(linesWithWord) == 0:
         print("\nWord not found!")
     else:
+        print("")
+        print("Word found %s times." % numFound)
         for index in range(0, len(linesWithWord)):
             print("Line %s: %s" % (str(linesWithWordNumber[index]), str(linesWithWord[index])))
 
 
 def menuOptions(loadedCBL, filename):
-    """TODO write description"""
+    """ Prints menu options and picks which function(s) to run based on user response """
     myList = loadedCBL
     myFile = filename
 
@@ -134,11 +137,12 @@ def menuOptions(loadedCBL, filename):
                 myList.first()
                 print(myList._current.getData())
         elif response == "I":
-            # TODO write description
+            # Searches for word and prints the number of times and line(s) it appears on
             word = input("What word would you like to find?: ")
             findWord(myList, word)
             sleep(1.5)
         elif response == 'L':
+            # Navigate to the last line and display it, make it the current line
             if myList.isEmpty():
                 print("\nYou can not display the last line because there are no lines.")
                 sleep(1.5)
@@ -170,7 +174,8 @@ def menuOptions(loadedCBL, filename):
                 print("\nYou can not replace the current line because there are no lines.")
                 sleep(1.5)
             else:
-                item = input("Enter replacement item: ") + "\n"
+                item = input("Enter replacement item: ")
+                item = item.strip() + "\n"
                 myList.replace(item)
                 print(myList._current.getData())
         elif response == 'S':
