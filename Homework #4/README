@@ -32,7 +32,7 @@ Menu Options:
   R - Replace the Current Line With a New One
     * This will prompt you for an entry, which then replaces the text in the current line
   S - Save the Current List back to the Text File
-    * Saves the current version of your file back to the file that you opened at the beginning of the program. This will overwrite the file you opened to edit and can not be reversed.
+    * Saves the current version of your edited file back to the original file that you opened at the beginning of the program. This will overwrite the original file and can not be reversed.
   X - Exit (will save current list back to text file)
-    * Asks if you would like to save your file. If user responds ‘Y’, then it saves your file as if you had selected “S - Save the Current List back to the Text File”.
-      Exits the program.
+    * Asks if you would like to save your file. If you respond ‘Y’, then it saves your file as if you had selected “S - Save the Current List back to the Text File”.
+    * Exits the program.
