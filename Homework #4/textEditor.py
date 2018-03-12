@@ -181,7 +181,10 @@ def menuOptions(loadedCBL, filename):
         elif response == 'S':
             save(myList, myFile)
         elif response == 'X':
-            save(myList, myFile)
+            likeToSave = input("Would you like to save your file before you exit? (Y/N): ")
+            likeToSave = likeToSave.lower()
+            if likeToSave == 'y':
+                save(myList, myFile)
             break
         else:
             print("\nInvalid Menu Choice!")
