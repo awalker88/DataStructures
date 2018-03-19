@@ -1,4 +1,6 @@
-""" Heap Sort """
+""" Heap Sort
+Author: Mark Fienup"""
+
 from binheap import BinHeap
 # methods: BinHeap(), insert(item), delMin(), isEmpty(), size()
 
