@@ -1,5 +1,6 @@
 """ File:  timeHeapSort.py
-    Description:  Times the heap sort algorithm on random data"""
+    Description:  Times the heap sort algorithm on random data
+    Author: Mark Fienup"""
 
 import time
 import random
