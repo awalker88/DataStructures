@@ -1,6 +1,7 @@
 '''
     Description:  Sorts myList in ascending order using an insertion sort.
     File:  insertionSort.py
+    Author: Mark Fienup
 '''
 
 def insertionSort(myList):
