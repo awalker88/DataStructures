@@ -1,0 +1,38 @@
+textEditor.py User Manual
+
+Description:
+  * textEditor.py is a program that allows you to modify a text file line by line.
+
+How to Use:
+  * Upon running textEditor.py, you will be asked for .txt file to open. If the file you enter exists in the current working directory, 
+  it will be opened and loaded into the editor. If the file does not exist, you will be asked to initialize a new file with a first entry.
+  * After entering a valid .txt file, you will be shown the contents of your file along with some menu options. You enter the letter associated 
+  with each command to select a menu option.
+  * Many options refer to a “Current Line”. This is the line of the file you are currently editing. When you first open a file, the current line 
+  is set to the last line of the file.
+
+Menu Options:
+  A - Insert Line After Current Line
+    * This will prompt you for an entry, which is then entered as a new line after the current line.
+  B - Insert Line Before Current Line
+    * This will prompt you for an entry, which is then entered as a new line before the current line.
+  D - Delete Current Line
+    * This will delete the current line and set the next line as current.
+  F - View First Line
+    * Prints the first line and makes it the current line
+  I - Find Word in File
+    * Will prompt you for a word, then search and return all lines with that word on it.
+      NOTE: can only search for a words without spaces in them (e.g. “cat” or “part-time”). Phrases with spaces in them can not be searched for.
+  L - View Last Line
+    * Prints the last line and makes it the current line
+  N - View Next Line
+    * Prints the next line and makes it the current line
+  P - View Previous Line
+    * Prints the previous line and makes it the current line
+  R - Replace the Current Line With a New One
+    * This will prompt you for an entry, which then replaces the text in the current line
+  S - Save the Current List back to the Text File
+    * Saves the current version of your edited file back to the original file that you opened at the beginning of the program. This will overwrite the original file and can not be reversed.
+  X - Exit (will save current list back to text file)
+    * Asks if you would like to save your file. If you respond ‘Y’, then it saves your file as if you had selected “S - Save the Current List back to the Text File”.
+    * Exits the program.
