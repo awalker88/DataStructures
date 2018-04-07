@@ -4,9 +4,10 @@
 
 import time
 import random
-from heapSort import heapSort
+from heapSort import heapSort, improvedHeapSort
 
 def main():
+    # heapSort
     n = int(input("Enter the number of items you would like to sort: "))
     myList = []
     for index in range(n):
@@ -16,11 +17,20 @@ def main():
     start = time.clock()
 
     heapSort(myList)
-    
+
     endSort = time.clock()
 
-    #print( "Sorted List:  ", myList)
-    print( "Total heap sort time of", n, "random items %5.4f" % (endSort - start))
+    # print( "Sorted List:  ", myList)
+    print("Total improved heap sort time of", n, "random items %5.4f" % (endSort - start))
 
-    
+    # improvedHeapSort
+
+    start = time.clock()
+
+    improvedHeapSort(myList)
+
+    endSort = time.clock()
+
+    print("Total heap sort time of", n, "random items %5.4f" % (endSort - start))
+
 main()

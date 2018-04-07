@@ -1,6 +1,5 @@
 """ Heap Sort
-Author: Mark Fienup"""
-
+author: Mark Fienup"""
 from binheap import BinHeap
 # methods: BinHeap(), insert(item), delMin(), isEmpty(), size()
 
@@ -9,8 +8,22 @@ def heapSort(myList):
     minHeap = BinHeap()
 
     # Add all list items to minHeap
-    # ADD CODE HERE
+    for item in myList:
+        minHeap.insert(item)
 
     # delMin heap items back to list in sorted order
-    # ADD MORE CODE HERE
+    for item in range(len(myList)):
+        myList[item] = minHeap.delMin()
 
+def improvedHeapSort(myList):
+
+    # Create empty heap list
+    maxHeap = []
+
+    # Add myList items to maxHeap
+    for item in myList:
+        maxHeap.append(item)
+
+    # Heapify maxHeap
+    height = len(maxHeap) // 2
+    for item in myList:
