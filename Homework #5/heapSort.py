@@ -17,7 +17,7 @@ def heapSort(myList):
 
 def improvedHeapSort(myList):
 
-    # Create empty heap list
+    # Creates empty heap list
     maxHeap = []
 
     # Add myList items to maxHeap
